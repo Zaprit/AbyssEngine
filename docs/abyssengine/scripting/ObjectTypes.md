@@ -99,6 +99,60 @@ Gets the total number of animations available for this sprite.
 
 Gets the number of frames in an animation.
 
+### Mouse Events
+
+All functions have similar inputs/outputs so are grouped together in this doucment.
+
+```lua
+
+function onMouseEnter(func(x,y):bool)          
+
+```
+
+Sets (or clears of nil) a callback function to be executed when the mouse enters the sprite.
+
+```lua
+
+function onMouseLeave(func(x,y):bool)
+
+```
+
+Sets (or clears of nil) a callback function to be executed when the mouse leaves the sprite.
+
+```lua
+
+function onMouseMove(func(x,y):bool)
+
+```
+
+Sets (or clears of nil) a callback function to be executed when the mouse moves across the sprite.
+
+```lua
+
+function onMouseButtonDown(func(buttons):bool)
+
+```
+
+Sets (or clears of nil) a callback function to be executed when the mouse button is pressed on the sprite.
+
+```lua
+
+function onMouseButtonUp(func(buttons):bool)
+
+```
+
+Sets (or clears of nil) a callback function to be executed when the mouse button is pressed on the sprite.
+
+### Function Description
+
+The callback function will receive a value representing bitflags for the buttons that are pressed:
+
+- Left Button   = `$01`
+- Right Button  = `$02`
+- Middle Button = `$04`
+
+The callback should return a boolean representing whether the event has been handled or not. If true is returned, no other node will receive input events (if false they will).x
+
 ---
 
 ## Node

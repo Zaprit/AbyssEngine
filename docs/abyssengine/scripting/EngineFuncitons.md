@@ -1,6 +1,6 @@
 # Engine Functions
 
-These are the functions available from lua in the Abyss Engine scripting environment
+These are the functions available from Lua in the Abyss Engine scripting environment
 
 ---
 
@@ -230,3 +230,15 @@ function getRootNode(): node
 ```
 
 Returns the root node in the engine's scene graph.
+
+---
+
+## playVideo
+
+```lua
+function playVideo(path, wait)
+```
+
+Plays the video at the specified path. This will pause all updates/rendering in the engine.
+
+If wait is true, the function will not return until the video finishes playing.
