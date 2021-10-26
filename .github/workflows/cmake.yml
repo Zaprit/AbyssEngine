@@ -45,6 +45,14 @@ jobs:
                 if: matrix.os == 'ubuntu-latest'
                 run: sudo apt-get update && sudo apt-get install nasm libxext-dev libavcodec-dev libavformat-dev libavdevice-dev libavfilter-dev
 
+            -   name: Cache Homebrew Dependencies
+                if: matrix.os == 'macos-11'
+                id: cache-deps
+                uses: actions/cache@v2
+                with:
+                    path: |
+                       /usr/local/Cellar
+                    key: ${{ runner.os }}-homebrew
             -   name: Install Deps (MacOS)
                 if: matrix.os == 'macos-11'
                 run: brew install nasm ffmpeg
