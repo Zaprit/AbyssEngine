@@ -138,9 +138,9 @@ function addLoaderProvider(type, path)
 
 Adds a location that resources can be loaded from, resources are loaded from the earliest added loader provider
 
-`type is "mpq" or "filesystem"`
+`type is "mpq", "casc" or "filesystem"`
 
-`path is either a path to an mpq file or a directory`
+`path is either a path to an mpq file, casc file, or a directory`
 
 **Note**: The base directory is always loaded as a filesytem provider with the highest priority
 
@@ -242,3 +242,9 @@ function playVideo(path, wait)
 Plays the video at the specified path. This will pause all updates/rendering in the engine.
 
 If wait is true, the function will not return until the video finishes playing.
+
+## fileExists
+
+```lua
+function fileExists(path): bool
+```
